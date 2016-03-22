@@ -32,18 +32,27 @@ connect("lwr_gazebo.JointVelocity","lwr_osf_controller.currJntVel",cp_ctrl_gz);
 
 // setting a single property
 // define khatib gains
+// define specification
+set lwr_osf_controller.use_original_khatib_controller = 1;
+set lwr_osf_controller.use_euler_orientation = 1;
+
+// define khatib gains
 set lwr_osf_controller.Kp_cartTranslationKhatibGain = 50;
 set lwr_osf_controller.Kd_cartTranslationKhatibGain = 14;
-set lwr_osf_controller.Kp_cartOrientationKhatibGain = 2500;
-set lwr_osf_controller.Kd_cartOrientationKhatibGain = 100;
+set lwr_osf_controller.Kp_cartOrientationEulerKhatibGain = 2500;
+set lwr_osf_controller.Kd_cartOrientationEulerKhatibGain = 100;
+set lwr_osf_controller.Kp_cartOrientationQuaternionKhatibGain = 72;
+set lwr_osf_controller.Kd_cartOrientationQuaternionKhatibGain = 100; // here the rule 2*sqrt() does not make sense because of different comparisons
 set lwr_osf_controller.Kp_jointKhatibGain = 20;
 set lwr_osf_controller.Kd_jointKhatibGain = 6;
 
 // define constrained projection gains
 set lwr_osf_controller.Kp_cartTranslationConstrainedGain = 50;
 set lwr_osf_controller.Kd_cartTranslationConstrainedGain = 14;
-set lwr_osf_controller.Kp_cartOrientationConstrainedGain = 2500;
-set lwr_osf_controller.Kd_cartOrientationConstrainedGain = 100;
+set lwr_osf_controller.Kp_cartOrientationEulerConstrainedGain = 2500;
+set lwr_osf_controller.Kd_cartOrientationEulerConstrainedGain = 100;
+set lwr_osf_controller.Kp_cartOrientationQuaternionConstrainedGain = 0;
+set lwr_osf_controller.Kd_cartOrientationQuaternionConstrainedGain = 0;
 set lwr_osf_controller.Kp_jointConstrainedGain = 20;
 set lwr_osf_controller.Kd_jointConstrainedGain = 6;
 
