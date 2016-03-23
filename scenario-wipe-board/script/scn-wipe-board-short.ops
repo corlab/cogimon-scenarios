@@ -47,10 +47,10 @@ set lwr_osf_controller.Kp_jointKhatibGain = 20;
 set lwr_osf_controller.Kd_jointKhatibGain = 6;
 
 // define constrained projection gains
-set lwr_osf_controller.Kp_cartTranslationConstrainedGain = 50;
-set lwr_osf_controller.Kd_cartTranslationConstrainedGain = 14;
-set lwr_osf_controller.Kp_cartOrientationEulerConstrainedGain = 2500;
-set lwr_osf_controller.Kd_cartOrientationEulerConstrainedGain = 100;
+set lwr_osf_controller.Kp_cartTranslationConstrainedGain = 200;
+set lwr_osf_controller.Kd_cartTranslationConstrainedGain = 20;
+set lwr_osf_controller.Kp_cartOrientationEulerConstrainedGain = 200;
+set lwr_osf_controller.Kd_cartOrientationEulerConstrainedGain = 20;
 set lwr_osf_controller.Kp_cartOrientationQuaternionConstrainedGain = 0;
 set lwr_osf_controller.Kd_cartOrientationQuaternionConstrainedGain = 0;
 set lwr_osf_controller.Kp_jointConstrainedGain = 20;
