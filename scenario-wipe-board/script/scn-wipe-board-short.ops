@@ -33,7 +33,7 @@ connect("lwr_gazebo.JointVelocity","lwr_osf_controller.currJntVel",cp_ctrl_gz);
 // setting a single property
 // define khatib gains
 // define specification
-set lwr_osf_controller.use_original_khatib_controller = 1;
+set lwr_osf_controller.use_original_khatib_controller = 0;
 set lwr_osf_controller.use_euler_orientation = 1;
 
 // define khatib gains
@@ -49,18 +49,18 @@ set lwr_osf_controller.Kd_jointKhatibGain = 6;
 // define constrained projection gains
 set lwr_osf_controller.Kp_cartTranslationConstrainedGain = 200;
 set lwr_osf_controller.Kd_cartTranslationConstrainedGain = 20;
-set lwr_osf_controller.Kp_cartOrientationEulerConstrainedGain = 200;
-set lwr_osf_controller.Kd_cartOrientationEulerConstrainedGain = 20;
+set lwr_osf_controller.Kp_cartOrientationEulerConstrainedGain = 1000;
+set lwr_osf_controller.Kd_cartOrientationEulerConstrainedGain = 77;
 set lwr_osf_controller.Kp_cartOrientationQuaternionConstrainedGain = 0;
 set lwr_osf_controller.Kd_cartOrientationQuaternionConstrainedGain = 0;
 set lwr_osf_controller.Kp_jointConstrainedGain = 20;
 set lwr_osf_controller.Kd_jointConstrainedGain = 6;
 
 // setting an array of properties
-for (var int indx = 0; indx < 10; set indx = indx +1 )
-{
-    set lwr_osf_controller.tenGains[indx] = 77;
-}
+//for (var int indx = 0; indx < 10; set indx = indx +1 )
+//{
+//    set lwr_osf_controller.tenGains[indx] = 77;
+//}
 
 lwr_osf_controller.configure()
 lwr_osf_controller.start()
