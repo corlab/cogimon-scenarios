@@ -1,0 +1,27 @@
+#!/usr/bin/env deployer
+
+import("rtt_gazebo_embedded")
+
+loadComponent("gazebo","RTTGazeboEmbedded")
+
+setActivity("gazebo",0,10,ORO_SCHED_OTHER)
+
+gazebo.argv = strings("--verbose","-s /home/enrico/robotology-superbuild/build/external/rtt-gazebo-clock-plugin/librtt_gazebo_system.so")
+
+gazebo.configure()
+
+gazebo.start()
+
+gazebo.toggleDynamicsSimulation(false)
+
+gazebo.spawn_model("coman", "model://iit-coman", 20)
+
+import("rtt-gazebo-coman-sim")
+
+loadComponent("coman_gazebo","cogimon::robotSim")
+setActivity("coman_gazebo",0,11,ORO_SCHED_OTHER)
+
+coman_gazebo.getModel("","coman",20)
+coman_gazebo.configure()
+
+gazebo.toggleDynamicsSimulation(true)
