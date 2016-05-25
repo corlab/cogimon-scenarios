@@ -1,5 +1,9 @@
 #!/usr/bin/env deployer
 
+import("eigen_typekit")
+import("kdl_typekit")
+import("rst-rt_typekit")
+import("rtt_rsbcomm")
 import("rtt_gazebo_embedded")
 
 loadComponent("gazebo","RTTGazeboEmbedded")
@@ -25,3 +29,5 @@ coman_gazebo.getModel("","coman",20)
 coman_gazebo.configure()
 
 gazebo.toggleDynamicsSimulation(true)
+
+#stream("coman_gazebo.JointPositionCtrl", rsb.transport.socket.scope("/my/input"))
